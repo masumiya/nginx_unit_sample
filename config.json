@@ -1,0 +1,26 @@
+{
+  "listeners": {
+    "*:8300": {
+      "application": "php-app"
+    },
+
+    "*:8400": {
+      "application": "py-app"
+    }
+  },
+
+  "applications": {
+    "php-app": {
+      "type": "php",
+      "workers": 20,
+      "index": "index.php",
+      "root": "/www/php-app"
+    },
+    "py-app": {
+      "type": "python",
+      "workers": 10,
+      "module": "wsgi",
+      "path": "/www/py-app"
+    }
+  }
+}
